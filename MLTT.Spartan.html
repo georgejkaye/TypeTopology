@@ -1,26 +1,129 @@
-<!DOCTYPE HTML>
-<html><head><meta charset="utf-8"><title>MLTT.Spartan</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Background">Our Spartan (intensional) Martin-Löf type theory has the empty type ∅,
-the unit type 𝟙, two-point-type 𝟚, natural numbers ℕ, product types Π,
-sum types Σ (and hence binary product types _×_), sum types _+_,
-identity types _＝_, and universes 𝓤, 𝓥, 𝓦, ....
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MLTT.Spartan</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 
-</a><a id="257" class="Markup">\begin{code}</a>
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">
+.Agda .Comment { color: #B22222 }
+.Agda .Background {}
+.Agda .Markup { color: #000000 }
+.Agda .Keyword { color: #CD6600 }
+.Agda .String { color: #B22222 }
+.Agda .Number { color: #A020F0 }
+.Agda .Symbol { color: #404040 }
+.Agda .PrimitiveType { color: #0000CD }
+.Agda .Pragma { color: black }
+.Agda .Operator {}
+.Agda .Hole { background: #B4EEB4 }
 
-<a id="271" class="Symbol">{-#</a> <a id="275" class="Keyword">OPTIONS</a> <a id="283" class="Pragma">--safe</a> <a id="290" class="Pragma">--without-K</a> <a id="302" class="Pragma">--exact-split</a> <a id="316" class="Symbol">#-}</a>
+.Agda .Bound { color: black }
+.Agda .Generalizable { color: black }
+.Agda .InductiveConstructor { color: #008B00 }
+.Agda .CoinductiveConstructor { color: #8B7500 }
+.Agda .Datatype { color: #0000CD }
+.Agda .Field { color: #EE1289 }
+.Agda .Function { color: #0000CD }
+.Agda .Module { color: #A020F0 }
+.Agda .Postulate { color: #0000CD }
+.Agda .Primitive { color: #0000CD }
+.Agda .Record { color: #0000CD }
 
-<a id="321" class="Keyword">module</a> <a id="328" href="MLTT.Spartan.html" class="Module">MLTT.Spartan</a> <a id="341" class="Keyword">where</a>
+.Agda .DottedPattern {}
+.Agda .UnsolvedMeta { color: black; background: yellow }
+.Agda .UnsolvedConstraint { color: black; background: yellow }
+.Agda .TerminationProblem { color: black; background: #FFA07A }
+.Agda .IncompletePattern { color: black; background: #F5DEB3 }
+.Agda .Error { color: red; text-decoration: underline }
+.Agda .TypeChecks { color: black; background: #ADD8E6 }
+.Agda .Deadcode { color: black; background: #808080 }
+.Agda .ShadowingInTelescope { color: black; background: #808080 }
 
-<a id="348" class="Keyword">open</a> <a id="353" class="Keyword">import</a> <a id="360" href="MLTT.Empty.html" class="Module">MLTT.Empty</a>           <a id="381" class="Keyword">public</a>
-<a id="388" class="Keyword">open</a> <a id="393" class="Keyword">import</a> <a id="400" href="MLTT.Unit.html" class="Module">MLTT.Unit</a>            <a id="421" class="Keyword">public</a>
-<a id="428" class="Keyword">open</a> <a id="433" class="Keyword">import</a> <a id="440" href="MLTT.Two.html" class="Module">MLTT.Two</a>             <a id="461" class="Keyword">public</a>
-<a id="468" class="Keyword">open</a> <a id="473" class="Keyword">import</a> <a id="480" href="MLTT.NaturalNumbers.html" class="Module">MLTT.NaturalNumbers</a>  <a id="501" class="Keyword">public</a>
-<a id="508" class="Keyword">open</a> <a id="513" class="Keyword">import</a> <a id="520" href="MLTT.Plus.html" class="Module">MLTT.Plus</a>            <a id="541" class="Keyword">public</a>
-<a id="548" class="Keyword">open</a> <a id="553" class="Keyword">import</a> <a id="560" href="MLTT.Pi.html" class="Module">MLTT.Pi</a>              <a id="581" class="Keyword">public</a>
-<a id="588" class="Keyword">open</a> <a id="593" class="Keyword">import</a> <a id="600" href="MLTT.Sigma.html" class="Module">MLTT.Sigma</a>           <a id="621" class="Keyword">public</a>
-<a id="628" class="Keyword">open</a> <a id="633" class="Keyword">import</a> <a id="640" href="MLTT.Universes.html" class="Module">MLTT.Universes</a>       <a id="661" class="Keyword">public</a>
-<a id="668" class="Keyword">open</a> <a id="673" class="Keyword">import</a> <a id="680" href="MLTT.Id.html" class="Module">MLTT.Id</a>              <a id="701" class="Keyword">public</a>
-
-<a id="709" class="Keyword">open</a> <a id="714" class="Keyword">import</a> <a id="721" href="Notation.General.html" class="Module">Notation.General</a> <a id="738" class="Keyword">public</a>
-
-<a id="746" class="Markup">\end{code}</a><a id="756" class="Background">
-</a></pre></body></html>
+.Agda a { text-decoration: none }
+.Agda a[href]:hover { background-color: #B4EEB4 }
+.Agda [href].hover-highlight { background-color: #B4EEB4; }
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MLTT.Spartan</h1>
+</header>
+<p>Our Spartan (intensional) Martin-Löf type theory has the empty type
+∅, the unit type 𝟙, two-point-type 𝟚, natural numbers ℕ, product types
+Π, sum types Σ (and hence binary product types _×_), sum types _+_,
+identity types _＝_, and universes 𝓤, 𝓥, 𝓦, ....</p>
+<p>&lt;pre class=&quot;Agda&quot;&gt;</p>
+<p>&lt;a id=&quot;271&quot; class=&quot;Symbol&quot;&gt;<span>-#&lt;/a&gt; &lt;a id=&quot;275&quot;
+class=&quot;Keyword&quot;&gt;OPTIONS&lt;/a&gt; &lt;a id=&quot;283&quot;
+class=&quot;Pragma&quot;&gt;–safe&lt;/a&gt; &lt;a id=&quot;290&quot;
+class=&quot;Pragma&quot;&gt;–without-K&lt;/a&gt; &lt;a id=&quot;302&quot;
+class=&quot;Pragma&quot;&gt;–exact-split&lt;/a&gt; &lt;a id=&quot;316&quot;
+class=&quot;Symbol&quot;&gt;#-</span>&lt;/a&gt;</p>
+<p>&lt;a id=&quot;321&quot; class=&quot;Keyword&quot;&gt;module&lt;/a&gt; &lt;a id=&quot;328&quot;
+href=&quot;MLTT.Spartan.html&quot; class=&quot;Module&quot;&gt;MLTT.Spartan&lt;/a&gt; &lt;a
+id=&quot;341&quot; class=&quot;Keyword&quot;&gt;where&lt;/a&gt;</p>
+<p>&lt;a id=&quot;348&quot; class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;353&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;360&quot;
+href=&quot;MLTT.Empty.html&quot; class=&quot;Module&quot;&gt;MLTT.Empty&lt;/a&gt; &lt;a
+id=&quot;381&quot; class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;388&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;393&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;400&quot; href=&quot;MLTT.Unit.html&quot;
+class=&quot;Module&quot;&gt;MLTT.Unit&lt;/a&gt; &lt;a id=&quot;421&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;428&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;433&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;440&quot; href=&quot;MLTT.Two.html&quot;
+class=&quot;Module&quot;&gt;MLTT.Two&lt;/a&gt; &lt;a id=&quot;461&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;468&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;473&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;480&quot;
+href=&quot;MLTT.NaturalNumbers.html&quot;
+class=&quot;Module&quot;&gt;MLTT.NaturalNumbers&lt;/a&gt; &lt;a id=&quot;501&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;508&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;513&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;520&quot; href=&quot;MLTT.Plus.html&quot;
+class=&quot;Module&quot;&gt;MLTT.Plus&lt;/a&gt; &lt;a id=&quot;541&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;548&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;553&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;560&quot; href=&quot;MLTT.Pi.html&quot;
+class=&quot;Module&quot;&gt;MLTT.Pi&lt;/a&gt; &lt;a id=&quot;581&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;588&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;593&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;600&quot;
+href=&quot;MLTT.Sigma.html&quot; class=&quot;Module&quot;&gt;MLTT.Sigma&lt;/a&gt; &lt;a
+id=&quot;621&quot; class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;628&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;633&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;640&quot;
+href=&quot;MLTT.Universes.html&quot; class=&quot;Module&quot;&gt;MLTT.Universes&lt;/a&gt;
+&lt;a id=&quot;661&quot; class=&quot;Keyword&quot;&gt;public&lt;/a&gt; &lt;a id=&quot;668&quot;
+class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;673&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;680&quot; href=&quot;MLTT.Id.html&quot;
+class=&quot;Module&quot;&gt;MLTT.Id&lt;/a&gt; &lt;a id=&quot;701&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt;</p>
+<p>&lt;a id=&quot;709&quot; class=&quot;Keyword&quot;&gt;open&lt;/a&gt; &lt;a id=&quot;714&quot;
+class=&quot;Keyword&quot;&gt;import&lt;/a&gt; &lt;a id=&quot;721&quot;
+href=&quot;Notation.General.html&quot;
+class=&quot;Module&quot;&gt;Notation.General&lt;/a&gt; &lt;a id=&quot;738&quot;
+class=&quot;Keyword&quot;&gt;public&lt;/a&gt;</p>
+<p>&lt;/pre&gt;</p>
+</body>
+</html>
