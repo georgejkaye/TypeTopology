@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Uniform continuity of sequence functions
 
@@ -39,7 +39,7 @@ seq-f-ucontinuous² {𝓤} {𝓥} {𝓦} {X} {Y} f
    ((x₁ x₂ : (ℕ → X)) (y₁ y₂ : (ℕ → Y))
  → (x₁ ∼ⁿ x₂) δˣ → (y₁ ∼ⁿ y₂) δʸ → (f x₁ y₁ ∼ⁿ f x₂ y₂) ϵ)
 
-map-ucontinuous' : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } 
+map-ucontinuous' : {X : 𝓤 ̇ } {Y : 𝓥 ̇ }
                  → (f : X → Y) → seq-f-ucontinuous¹ (map f)
 map-ucontinuous' f ε = ε , λ α β α∼ⁿβ k k<ε → ap f (α∼ⁿβ k k<ε)
 
@@ -109,7 +109,7 @@ seq-f-ucontinuous²-comp
        (pr₂ (ϕᵍ (pr₂ (pr₁ (ϕᶠ ϵ)))) y₁ y₂ z z
        y₁∼y₂
        (λ _ _ → refl))
- 
+
 seq-f-ucontinuous¹²-comp
  : {X : 𝓤 ̇ } {Y : 𝓥 ̇ } {Z : 𝓦 ̇ } {W : 𝓣 ̇ }
  → (f : (ℕ → Z) → (ℕ → W))
@@ -176,7 +176,7 @@ seq-f-ucontinuous²-to-closeness
                                    (ℕ→D-ClosenessSpace dʸ))
                  (ℕ→D-ClosenessSpace dᶻ) (uncurry f)
 seq-f-ucontinuous²-to-closeness dˣ dʸ dᶻ f ϕ ε
- = δ 
+ = δ
  , λ (α₁ , α₂) (β₁ , β₂) Cαβ
  → ∼ⁿ-to-C dᶻ (f α₁ α₂) (f β₁ β₂) ε
      (pr₂ (ϕ ε) α₁ β₁ α₂ β₂
@@ -197,4 +197,4 @@ seq-f-ucontinuous²-to-closeness dˣ dʸ dᶻ f ϕ ε
   δ  = max δα δβ
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

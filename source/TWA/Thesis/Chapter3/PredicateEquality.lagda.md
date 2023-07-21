@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Equality of uniformly continuous predicates
 
@@ -99,4 +99,4 @@ decidable-uc-predicate-with-mod-＝
        (predicate-＝ p₁ p₂ f))
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

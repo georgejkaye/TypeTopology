@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Examples of approximate orders
 
@@ -79,7 +79,7 @@ inclusion-order-is-strict-order {𝓤} {𝓥} {𝓦} {X} {Y}
  f _<_ (i' , t' , a' , p') = i , t , a , p
  where
   i : (x : X) → ¬ inclusion-order f _<_ x x
-  i x     = i' (f x) 
+  i x     = i' (f x)
   t : transitive (inclusion-order f _<_)
   t x y z = t' (f x) (f y) (f z)
   a : (x y : X)
@@ -104,7 +104,7 @@ embedding-strict-order-trichotomous
 inclusion-approx-order
  : {X : 𝓤 ̇ } {Y : ClosenessSpace 𝓥} (f : X → ⟨ Y ⟩)
  → (_≤ⁿ_ : ⟨ Y ⟩ → ⟨ Y ⟩ → ℕ → 𝓦  ̇)
- → X → X → ℕ → 𝓦  ̇ 
+ → X → X → ℕ → 𝓦  ̇
 inclusion-approx-order f _≤ⁿ_ x y = f x ≤ⁿ f y
 
 Σ-order : {X : 𝓤 ̇ } (P : X → 𝓥 ̇ ) (_≤_ : X → X → 𝓦  ̇)
@@ -125,7 +125,7 @@ inclusion-approx-order f _≤ⁿ_ x y = f x ≤ⁿ f y
   p (x , _) (y , _) = p' x y
 
 Σ-approx-order : {X : 𝓤 ̇ } → (P : X → 𝓥 ̇ ) → (_≤ⁿ_ : X → X → ℕ → 𝓦  ̇)
-               → Σ P → Σ P → ℕ → 𝓦  ̇ 
+               → Σ P → Σ P → ℕ → 𝓦  ̇
 Σ-approx-order P _≤ⁿ_ (x , _) (y , _) = x ≤ⁿ y
 
 Σ-approx-order-is-approx-order
@@ -207,7 +207,7 @@ _≤Fin_ {succ n} (suc x) (suc y) = x ≤Fin y
   l {succ n} (suc x) (suc y) = l x y
 
 finite-order : {F : 𝓤 ̇ } → finite-linear-order F → F → F → 𝓤₀  ̇
-finite-order (n , (g , _)) = inclusion-order g _≤Fin_ 
+finite-order (n , (g , _)) = inclusion-order g _≤Fin_
 
 finite-order-is-linear-preorder
  : {F : 𝓤 ̇ }
@@ -255,7 +255,7 @@ _<Fin_ {succ n} (suc x) (suc y) = x <Fin y
 
 finite-strict-order : {F : 𝓤 ̇ } → finite-linear-order F → F → F → 𝓤₀ ̇
 finite-strict-order (n , (g , _)) = inclusion-order g _<Fin_
-  
+
 finite-strict-order-is-strict-order
  : {F : 𝓤 ̇ } → (f : finite-linear-order F)
  → is-strict-order (finite-strict-order f)
@@ -277,7 +277,7 @@ discrete-lexicorder : {D : 𝓤 ̇ }
                     → is-discrete D
                     → (_<_ : D → D → 𝓥 ̇ )
                     → (α β : ℕ → D)
-                    → 𝓤 ⊔ 𝓥  ̇ 
+                    → 𝓤 ⊔ 𝓥  ̇
 discrete-lexicorder f _<_ α β
  = (α ∼ β) + (Σ n ꞉ ℕ , ((α ∼ⁿ β) n × (α n) < (β n)))
 
@@ -335,7 +335,7 @@ discrete-lexicorder-is-preorder d s _<_ (i' , t' , a' , p')
                          (transport (x m <_) (u m m<n ⁻¹) e)))))
     c : _
     c g (n , w , v) = i' (y n) (transport (_< y n) (g n) v)
-    
+
 lexicorder-linearity-implies-LPO
  : {X : 𝓤 ̇ }
  → (f@(n , _) : finite-linear-order X)
@@ -380,7 +380,7 @@ lexicorder-linearity-implies-LPO
   ρ-lc {₁} {₀} e
    = 𝟘-elim (<-irref⟨ γ ⟩ d₀ (transport (d₀ <ₓ_) e d₀<d₁))
   ρ-lc {₁} {₁} e = refl
- 
+
 finite-lexicorder
  : {F : 𝓤 ̇ } (f : finite-linear-order F) (d : is-discrete F)
  → (_<_ : F → F → 𝓦 ̇ )
@@ -521,7 +521,7 @@ module _ (pt : propositional-truncations-exist) where
       (discrete-lexicorder ds _<_)
       (discrete-approx-lexicorder ds _<_)
  discrete-approx-lexicorder-for' ds i _<_ α β (inl α∼β)
-  = ∣ (0 , λ _ _ → inl (λ n _ → α∼β n)) ∣ 
+  = ∣ (0 , λ _ _ → inl (λ n _ → α∼β n)) ∣
  discrete-approx-lexicorder-for' ds i _<_ α β (inr (n , α∼ⁿβ , αn<βn))
   = ∣ succ n , (λ ϵ n<ϵ → inr (n , n<ϵ , α∼ⁿβ , αn<βn)) ∣
 
@@ -550,7 +550,7 @@ module _ (pt : propositional-truncations-exist) where
 
 <₂-is-strict : is-strict-order _<₂_
 <₂-is-strict
- = <₂-irref 
+ = <₂-irref
  , <₂-trans
  , <₂-anti
  , λ _ _ → <₂-is-prop-valued
@@ -584,7 +584,7 @@ module _ (pt : propositional-truncations-exist) where
  = Σ-order-is-preorder is-decreasing
      ℕ→𝟚-lexicorder ℕ→𝟚-lexicorder-is-preorder
 
-ℕ→𝟚-approx-lexicorder : (ℕ → 𝟚) → (ℕ → 𝟚) → ℕ → 𝓤₀ ̇ 
+ℕ→𝟚-approx-lexicorder : (ℕ → 𝟚) → (ℕ → 𝟚) → ℕ → 𝓤₀ ̇
 ℕ→𝟚-approx-lexicorder = discrete-approx-lexicorder 𝟚-is-discrete _<₂_
 
 ℕ→𝟚-approx-lexicorder-is-approx-order
@@ -606,4 +606,4 @@ module _ (pt : propositional-truncations-exist) where
      ℕ→𝟚-approx-lexicorder-is-approx-order
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

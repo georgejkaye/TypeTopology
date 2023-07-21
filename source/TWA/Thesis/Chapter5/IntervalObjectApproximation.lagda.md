@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Interval object finite approximations
 
@@ -71,7 +71,7 @@ one-sided-approx x y f = M-prop₂ ws y γ where
         ＝ m (append-one (y (succ i) ⊕ z) ((first- (succ i)) y))
     δ'' y z 0 = refl
     δ'' y z (succ i) = ap (y 0 ⊕_) (δ'' (y ∘ succ) z i)
-    
+
 _++'_ : {n : ℕ} {X : 𝓤 ̇ } → Vec X n → (ℕ → X) → (ℕ → X)
 _++'_ {n} {X} v α = Vec-to-Seq n α v
 
@@ -210,8 +210,8 @@ n-approx'→n-approx x y f (succ n) = f n
 
 fg-n-approx' : {X : 𝓥 ̇ } → (f g : X → ℕ → 𝕀) → ℕ → 𝓤 ⊔ 𝓥 ̇
 fg-n-approx' f g n
- = (∀ x → n-approx' (f x) (g x) n) 
- → (∀ x → n-approx' (f x) (g x) (succ n)) 
+ = (∀ x → n-approx' (f x) (g x) n)
+ → (∀ x → n-approx' (f x) (g x) (succ n))
 
 fg-approx-holds : {X : 𝓥 ̇ } (f g : X → ℕ → 𝕀)
                 → Π (fg-n-approx' f g)
@@ -224,4 +224,4 @@ fg-approx-holds {_} {X} f g h x
   γ x (succ n) = h n (λ y → γ y n) x
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

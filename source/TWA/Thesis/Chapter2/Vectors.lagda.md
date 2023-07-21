@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Vectors
 
@@ -25,7 +25,7 @@ Vec-to-Seq : (n : ℕ) {X : ℕ → 𝓤 ̇ }
            → Π (X ∘ succ ^ n)
            → vec n (X ∘ ⟦_⟧)
            → Π X
-Vec-to-Seq 0 α ⟨⟩ = α 
+Vec-to-Seq 0 α ⟨⟩ = α
 Vec-to-Seq (succ n) α (x :: xs) 0 = x
 Vec-to-Seq (succ n) α (x :: xs) (succ i) = Vec-to-Seq n α xs i
 
@@ -44,4 +44,4 @@ Seq-to-Vec-∼ (succ n) α β (succ i) i<n
  = Seq-to-Vec-∼ n α (β ∘ succ) i i<n
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Ternary signed-digit encodings
 
@@ -43,14 +43,14 @@ data 𝟛 : 𝓤₀ ̇ where
   μ 𝟎 = refl
   μ 𝟏 = refl
   μ 𝟐 = refl
-  
+
 𝟛-is-discrete : is-discrete 𝟛
 𝟛-is-discrete = finite-is-discrete 𝟛-is-finite
 
 𝟛-is-set : is-set 𝟛
 𝟛-is-set = finite-is-set 𝟛-is-finite
 
-𝟛ᴺ : 𝓤₀ ̇ 
+𝟛ᴺ : 𝓤₀ ̇
 𝟛ᴺ = ℕ → 𝟛
 ```
 
@@ -123,7 +123,7 @@ mid α β = div2 (add2 α β)
 data 𝟡 : 𝓤₀ ̇ where
   −4 −3 −2 −1 O +1 +2 +3 +4 : 𝟡
 
-𝟡ᴺ : 𝓤₀ ̇ 
+𝟡ᴺ : 𝓤₀ ̇
 𝟡ᴺ = ℕ → 𝟡
 
 _+𝟝_ : 𝟝 → 𝟝 → 𝟡
@@ -185,7 +185,7 @@ div4-aux −1 +2 =  O , O
 div4-aux −1 +3 =  O , +1
 div4-aux −1 +4 =  O , +2
 div4-aux +1 −4 =  O , −2
-div4-aux +1 −3 =  O , −1 
+div4-aux +1 −3 =  O , −1
 div4-aux +1 −2 =  O ,  O
 div4-aux +1 −1 =  O , +1
 div4-aux +1  O =  O , +2
@@ -248,4 +248,4 @@ mul : 𝟛ᴺ → 𝟛ᴺ → 𝟛ᴺ
 mul x y = bigMid (zipWith digitMul x (repeat y))
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

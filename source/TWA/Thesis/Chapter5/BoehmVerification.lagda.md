@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Ternary Boehm encodings of real numbers
 
@@ -60,7 +60,7 @@ a below b = downLeft b ≤ a ≤ downRight b
 ternary : (ℤ → ℤ) → 𝓤₀  ̇
 ternary x = (δ : ℤ) → x (succℤ δ) below x δ
 
-𝕋 : 𝓤₀ ̇ 
+𝕋 : 𝓤₀ ̇
 𝕋 = Σ x ꞉ (ℤ → ℤ) , ternary x
 
 ℤ[1/2]ᴵ : 𝓤₀ ̇
@@ -122,17 +122,17 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
   L p = (∃ n ꞉ ℤ , p < ld (χ n)) , ∃-is-prop
   R q = (∃ n ꞉ ℤ , rd (χ n) < q) , ∃-is-prop
 
-  
+
   inhabited-l : inhabited-left L
   inhabited-l = ∣ ld (χ (pos 0)) - 1ℤ[1/2]
               , ∣ (pos 0)
                   , (ℤ[1/2]<-neg (ld (χ (pos 0))) 1ℤ[1/2] 0<1ℤ[1/2]) ∣ ∣
-  
+
   inhabited-r : inhabited-right R
   inhabited-r = ∣ (rd (χ (pos 0)) +𝔻 1ℤ[1/2])
               , ∣ pos 0
                   , ℤ[1/2]<-+ (rd (χ (pos 0))) 1ℤ[1/2] 0<1ℤ[1/2] ∣ ∣
-  
+
   rounded-l : rounded-left L
   rounded-l p = ltr , rtl
    where
@@ -155,7 +155,7 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
         II : Σ n ꞉ ℤ , (p' <ℤ[1/2] ld (χ n))
            → Σ n ꞉ ℤ , (p <ℤ[1/2] ld (χ n))
         II (n  , p'<ζn) = n , (trans p p' (ld (χ n)) p<p' p'<ζn)
-      
+
   rounded-r : rounded-right R
   rounded-r q = ltr , rtl
    where
@@ -173,7 +173,7 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
        where
         II : Σ n ꞉ ℤ , (rd (χ n) < q') → Σ n ꞉ ℤ , (rd (χ n) <ℤ[1/2] q)
         II (n , ζ<q') = n , (trans (rd (χ n)) q' q ζ<q' q'<q)
-  
+
   is-disjoint : disjoint L R
   is-disjoint p q (tp<x , tx<q)
    = ∥∥-rec (<ℤ[1/2]-is-prop p q) I (binary-choice tp<x tx<q)
@@ -187,7 +187,7 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
                           (pr₁ (nested-implies-fully-nested
                                   χ τ n n' n≤n'))
                  l<q' = ℤ[1/2]≤-< (ld (χ n')) (rd (χ n')) q
-                          (ld≤rd (χ n')) r<q 
+                          (ld≤rd (χ n')) r<q
            in trans p (ld (χ n')) q p<l' l<q'
     ... | inr n'≤n
            = let p<r' = ℤ[1/2]<-≤ p (ld (χ n)) (rd (χ n)) p<l
@@ -197,7 +197,7 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
                              χ τ n' n n'≤n))
                           r<q
            in trans p (rd (χ n)) q p<r' r<q'
- 
+
   is-located : located L R
   is-located p q p<q
    = I (π (1/2ℤ[1/2] * (q - p))
@@ -216,10 +216,10 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
       l₂ :(rd (χ n) - ld (χ n)) < (q - p)
       l₂ = ℤ[1/2]≤-< (rd (χ n) - ld (χ n)) (1/2ℤ[1/2] * (q - p))
              (q - p) l₁ (ℤ[1/2]-1/2-< (q - p) (diff-positive p q p<q))
-      II : (rd (χ n) < q) + (p < ld (χ n)) → (L p holds) ∨ (R q holds) 
+      II : (rd (χ n) < q) + (p < ld (χ n)) → (L p holds) ∨ (R q holds)
       II (inl ζ<q) = ∣ inr ∣ n , ζ<q ∣ ∣
       II (inr p<ζ) = ∣ inl ∣ n , p<ζ ∣ ∣
-  
+
 ℤ³ : 𝓤₀ ̇
 ℤ³ = Σ ((l , r) , p) ꞉ ((ℤ × ℤ) × ℤ) , l ≤ r
 
@@ -232,7 +232,7 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
       → ℝ-d
 ⦅ χ ⦆' = ⦅ ℤ³-to-ℤ[1/2]ᴵ ∘ χ ⦆
 
-ℤ² : 𝓤₀ ̇ 
+ℤ² : 𝓤₀ ̇
 ℤ² = ℤ × ℤ
 
 ℤ²-to-ℤ³ : ℤ² → ℤ³
@@ -250,7 +250,7 @@ nested-implies-fully-nested ζ ρ n m (k , refl)
       → ℝ-d
 ⦅_⦆'' = ⦅_⦆' ∘ (ℤ²-to-ℤ³ ∘_)
 
-normalised : (ℤ → ℤ²) → 𝓤₀ ̇ 
+normalised : (ℤ → ℤ²) → 𝓤₀ ̇
 normalised χ = (n : ℤ) → pr₂ (χ n) ＝ n
 
 ℤ²-width : ((k , p) : ℤ²)
@@ -329,7 +329,7 @@ pr₁ (pr₁ (ternary-nested χ η) f n) = γ
                         ≤ ι (pr₁ (χ (succℤ n)) , -))
           (η (succℤ n) ⁻¹)
           γ')
-pr₂ (pr₁ (ternary-nested χ η) f n) 
+pr₂ (pr₁ (ternary-nested χ η) f n)
  = transport (λ - → ι ((pr₁ (χ (succℤ n)) +pos 2) , -)
                   ≤ ι ((pr₁ (χ n) +pos 2) , pr₂ (χ n)))
      (η (succℤ n) ⁻¹)
@@ -431,7 +431,7 @@ below-is-prop a b
 
 ternary-is-prop : (χ : ℤ → ℤ) → is-prop (ternary χ)
 ternary-is-prop χ
- = Π-is-prop (fe _ _) (λ n → below-is-prop (χ (succℤ n)) (χ n)) 
+ = Π-is-prop (fe _ _) (λ n → below-is-prop (χ (succℤ n)) (χ n))
 
 ternary-normalised≃𝕋 : (Σ χ ꞉ (ℤ → ℤ²)
                      , (nested (ℤ²-to-ℤ[1/2]ᴵ ∘ χ)
@@ -460,7 +460,7 @@ ternary-normalised≃𝕋
  = χ' , τ , normalised-positioned χ' π
  where
   γ = 𝕋→nested-normalised χ
-  χ' = pr₁ γ 
+  χ' = pr₁ γ
   τ  = pr₁ (pr₂ γ)
   π  = pr₂ (pr₂ γ)
 
@@ -468,14 +468,14 @@ ternary-normalised≃𝕋
 ⟦ χ ⟧ = ⦅ χ' ⦆'' τ π
  where
   γ = 𝕋→nested-positioned χ
-  χ' = pr₁ γ 
+  χ' = pr₁ γ
   τ  = pr₁ (pr₂ γ)
   π  = pr₂ (pr₂ γ)
 ```
 
 ## Representing compact intervals
 
-``` 
+```
 CompactInterval : ℤ × ℤ → 𝓤₀ ̇
 CompactInterval (k , δ) = Σ (x , _) ꞉ 𝕋 , x(δ) ＝ k
 
@@ -510,7 +510,7 @@ replace-right''-correct
  : ((k , δ) : ℤ × ℤ)
  → (χ : ℕ → ℤ)
  → χ 0 below k
- → ((n : ℕ) → χ (succ n) below χ n) 
+ → ((n : ℕ) → χ (succ n) below χ n)
  → (n : ℤ)
  → (η : trich-locate n δ)
  →       replace-right'' (k , δ) χ (succℤ n) (ℤ-trich-succ n δ η)
@@ -641,7 +641,7 @@ CompactInterval2-ternary (k , i)
   η (χ , b₀ , bₛ)
    = to-subtype-＝ (CI2-prop (k , i)) (dfunext (fe _ _) γ)
    where
-    χ' = pr₁ (𝟛ᴺ-to-CI2 (k , i) (CI2-to-𝟛ᴺ (k , i) (χ , b₀ , bₛ))) 
+    χ' = pr₁ (𝟛ᴺ-to-CI2 (k , i) (CI2-to-𝟛ᴺ (k , i) (χ , b₀ , bₛ)))
     γ : χ' ∼ χ
     γ zero with below-implies-below' (χ 0) k b₀
     ... | inl      dL  = dL ⁻¹
@@ -758,7 +758,7 @@ CI3-to-CI2 (k , i) (χ , b₀ , bₛ)
 
 CI3-ClosenessSpace
  : ((k , i) : ℤ × ℤ) → is-closeness-space (CompactInterval3 (k , i))
-CI3-ClosenessSpace (k , i) 
+CI3-ClosenessSpace (k , i)
  = Σ-clospace (CI3-criteria (k , i)) (CI3-prop (k , i))
      (discrete-seq-clospace (λ _ → ℤ-is-discrete))
 
@@ -803,7 +803,7 @@ CompactInterval3-cantor (k , i)
   η (χ , b₀ , bₛ)
    = to-subtype-＝ (CI3-prop (k , i)) (dfunext (fe _ _) γ)
    where
-    χ' = pr₁ (𝟚ᴺ-to-CI3 (k , i) (CI3-to-𝟚ᴺ (k , i) (χ , b₀ , bₛ))) 
+    χ' = pr₁ (𝟚ᴺ-to-CI3 (k , i) (CI3-to-𝟚ᴺ (k , i) (χ , b₀ , bₛ)))
     γ : χ' ∼ χ
     γ zero = γ' b₀ refl
      where
@@ -814,7 +814,7 @@ CompactInterval3-cantor (k , i)
     γ (succ n) with bₛ n
     ... | inl dL = ap (_ℤ+ χ' n) (γ n)
                  ∙ ap (χ n ℤ+_ ) (γ n)
-                 ∙ dL ⁻¹ 
+                 ∙ dL ⁻¹
     ... | inr dR = ap (succℤ ∘ succℤ)
                      (ap (_ℤ+ χ' n) (γ n)
                      ∙ ap (χ n ℤ+_ ) (γ n))
@@ -845,4 +845,4 @@ CompactInterval3-cantor (k , i)
          (ap (λ a → 𝟚-to-down a (pr₁ α' n)) (₀' ⁻¹) ∙ dR))
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Ternary signed-digit encodings' suitability for search, optimisation and regression
 
@@ -95,7 +95,7 @@ open import TWA.Thesis.Chapter6.SignedDigitOrder fe
  = discrete-lexicorder-is-preorder 𝟚-is-discrete
      𝟚-is-set _<₂_ <₂-is-strict
 
-𝟚ᴺ-approx-lexicorder : 𝟚ᴺ → 𝟚ᴺ → ℕ → 𝓤₀ ̇ 
+𝟚ᴺ-approx-lexicorder : 𝟚ᴺ → 𝟚ᴺ → ℕ → 𝓤₀ ̇
 𝟚ᴺ-approx-lexicorder = discrete-approx-lexicorder 𝟚-is-discrete _<₂_
 
 𝟚ᴺ-approx-lexicorder-is-approx-order
@@ -203,4 +203,4 @@ _⤊ (α , β) = α ↑ , β ↑
      _⤊ ⤊-ucontinuous p ϕ
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

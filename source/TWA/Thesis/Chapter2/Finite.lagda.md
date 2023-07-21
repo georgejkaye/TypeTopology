@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Finite types
 
@@ -42,7 +42,7 @@ finite-is-set (n , f) = equiv-to-set f (Fin-is-set n)
   h : Fin 1 → 𝟙
   h 𝟎 = ⋆
   η : h ∘ g ∼ id
-  η ⋆ = refl 
+  η ⋆ = refl
   μ : g ∘ h ∼ id
   μ 𝟎 = refl
   μ (suc ())
@@ -88,4 +88,4 @@ pointed : 𝓤 ̇ → 𝓤 ̇
 pointed X = X
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

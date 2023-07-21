@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Main
 
@@ -57,19 +57,21 @@ open Regression-Example2
 ```
 
 Write the particular example run here, i.e. one of:
- * search-test-tb / search-test / search-test-tb' / serach-test'
- * opt-test / opt-test'
- * reg𝓞 / regΨ𝓞 / opt𝓞 / optΨ𝓞
+
+- search-test-tb / search-test / search-test-tb' / serach-test'
+- opt-test / opt-test'
+- reg𝓞 / regΨ𝓞 / opt𝓞 / optΨ𝓞
 
 ```
 test = reg𝓞
 ```
 
 Write the correct printer here, i.e. one of:
- * show𝟛ᴺ-prefix
- * show𝟚ᴺ-prefix
- * show𝟛ᴺ×𝟛ᴺ-prefix
- * show𝟚ᴺ×𝟚ᴺ-prefix
+
+- show𝟛ᴺ-prefix
+- show𝟚ᴺ-prefix
+- show𝟛ᴺ×𝟛ᴺ-prefix
+- show𝟚ᴺ×𝟚ᴺ-prefix
 
 ```
 print = show𝟚ᴺ×𝟚ᴺ-prefix
@@ -86,4 +88,4 @@ main : IO Unit
 main = putStrLn (print (test 5) 30)
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

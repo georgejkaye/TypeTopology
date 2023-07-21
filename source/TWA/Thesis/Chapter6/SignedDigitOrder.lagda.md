@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Real-order preserving order on ternary signed-digit encodings
 
@@ -117,7 +117,7 @@ integer-approx'-ucontinuous
  → (x ∼ⁿ y) ϵ
  → (k : ℤ)
  → integer-approx' x k ϵ ＝ integer-approx' y k ϵ
-integer-approx'-ucontinuous 0 x y x∼y k = refl 
+integer-approx'-ucontinuous 0 x y x∼y k = refl
 integer-approx'-ucontinuous (succ ϵ) x y x∼y k
  = ap (λ - → integer-approx'' (x 1) (x ∘ succ ∘ succ)
               (𝟛-to-down - k) ϵ)
@@ -145,4 +145,4 @@ module _ (pt : propositional-truncations-exist) where
  ≤ⁿ𝟛ᴺ-for' x y = ∥∥-rec ∃-is-prop ∣_∣
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

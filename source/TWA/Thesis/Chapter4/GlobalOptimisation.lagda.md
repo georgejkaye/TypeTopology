@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Global optimisation
 
@@ -76,14 +76,14 @@ finite-global-minimal x (succ n , e@(g , _ , (h , μ))) _≤_ l f
 is_global-minimal : ℕ → {𝓤 𝓥 : Universe}
                   → {X : 𝓤 ̇ } {Y : 𝓥 ̇ }
                   → (_≤ⁿ_ : Y → Y → ℕ → 𝓦 ̇ )
-                  → (f : X → Y) → X → 𝓦 ⊔ 𝓤  ̇ 
+                  → (f : X → Y) → X → 𝓦 ⊔ 𝓤  ̇
 (is ϵ global-minimal) {𝓤} {𝓥} {X} _≤ⁿ_ f x₀
  = (x : X) → (f x₀ ≤ⁿ f x) ϵ
 
 has_global-minimal : ℕ → {𝓤 𝓥 : Universe} {X : 𝓤 ̇ }
                    → {Y : 𝓥 ̇ }
                    → (_≤ⁿ_ : Y → Y → ℕ → 𝓦 ̇ )
-                   → (f : X → Y) → (𝓦 ⊔ 𝓤) ̇ 
+                   → (f : X → Y) → (𝓦 ⊔ 𝓤) ̇
 (has ϵ global-minimal) {𝓤} {𝓥} {𝓦} {X} _≤ⁿ_ f
  = Σ ((is ϵ global-minimal) {𝓤} {𝓥} {𝓦} {X} _≤ⁿ_ f)
 
@@ -98,9 +98,9 @@ Fin-ϵ-global-minimal 1 𝟎 Y _≤ⁿ_ a ϵ f
  = 𝟎 , γ
  where
   γ : is ϵ global-minimal _≤ⁿ_ f 𝟎
-  γ 𝟎 = ≤ⁿ-refl Y a ϵ (f 𝟎) 
-Fin-ϵ-global-minimal (succ (succ n)) _ Y _≤ⁿ_ a ϵ f 
- with Fin-ϵ-global-minimal (succ n) 𝟎 Y _≤ⁿ_ a ϵ (f ∘ suc) 
+  γ 𝟎 = ≤ⁿ-refl Y a ϵ (f 𝟎)
+Fin-ϵ-global-minimal (succ (succ n)) _ Y _≤ⁿ_ a ϵ f
+ with Fin-ϵ-global-minimal (succ n) 𝟎 Y _≤ⁿ_ a ϵ (f ∘ suc)
 ... | (x₀ , m)
  = Cases (≤ⁿ-linear Y a ϵ (f (suc x₀)) (f 𝟎))
      γ₁ γ₂
@@ -151,7 +151,7 @@ cover-continuity-lemma
      (C-sym Y ϵ (f x) (f (g (h x)))
        (pr₂ (ϕ ϵ) x (g (h x))
          (η x)))
-         
+
 global-opt : (X : ClosenessSpace 𝓤) (Y : ClosenessSpace 𝓥)
            → ⟨ X ⟩
            → (_≤ⁿ_ : ⟨ Y ⟩ → ⟨ Y ⟩ → ℕ → 𝓦'  ̇ )
@@ -192,4 +192,4 @@ global-opt {𝓤} {𝓥} {𝓦'} {𝓤'} X Y x₁ _≤ⁿ_ a ϵ f ϕ t
   m  = pr₂ first
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Formalisation of the Escardo-Simpson interval object
 
@@ -139,7 +139,7 @@ id-is-⊕-homomorphism 𝓐 x y = refl
 ```
 is-interval-object
  : (𝓘 : Convex-body 𝓤) (𝓥 : Universe) → ⟨ 𝓘 ⟩ → ⟨ 𝓘 ⟩ → 𝓤 ⊔ 𝓥 ⁺ ̇
-is-interval-object 𝓘 𝓥 u v 
+is-interval-object 𝓘 𝓥 u v
  = (𝓐 : Convex-body 𝓥) (a b : ⟨ 𝓐 ⟩)
  → ∃! h ꞉ (⟨ 𝓘 ⟩ → ⟨ 𝓐 ⟩)
  , (h u ＝ a) × (h v ＝ b)
@@ -520,4 +520,4 @@ module basic-interval-object-development {𝓤 : Universe}
  −1/2 = −1 /2
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

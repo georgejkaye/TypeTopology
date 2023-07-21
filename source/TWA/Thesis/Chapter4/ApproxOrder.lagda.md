@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Orders
 
@@ -21,7 +21,7 @@ open import TWA.Thesis.Chapter3.ClosenessSpaces fe
 ## Traditional orders
 
 ```
-is-preorder : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇ 
+is-preorder : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇
 is-preorder _≤_ = reflexive _≤_
                 × transitive _≤_
                 × is-prop-valued _≤_
@@ -32,7 +32,7 @@ linear {_} {_} {X} _≤_ = (x y : X) → (x ≤ y) + (y ≤ x)
 is-linear-preorder : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇
 is-linear-preorder {_} {_} {X} _≤_ = is-preorder _≤_ × linear _≤_
 
-is-strict-order : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇ 
+is-strict-order : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇
 is-strict-order {_} {_} {X} _<_
  = ((x : X) → ¬ (x < x))
  × transitive _<_
@@ -42,7 +42,7 @@ is-strict-order {_} {_} {X} _<_
 trichotomous : {X : 𝓤 ̇ } → (_<_ : X → X → 𝓥 ̇ ) → 𝓤 ⊔ 𝓥 ̇
 trichotomous {𝓤} {𝓥} {X} _<_ = (x y : X) → (x < y) + (x ＝ y) + (y < x)
 
-is-strict-linear-order : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇ 
+is-strict-linear-order : {X : 𝓤  ̇ } → (X → X → 𝓦  ̇ ) → 𝓤 ⊔ 𝓦  ̇
 is-strict-linear-order {_} {_} {X} _<_
  = is-strict-order _<_ × trichotomous _<_
 
@@ -67,7 +67,7 @@ is-approx-order X _≤ⁿ_
  = ((ϵ : ℕ) → is-linear-preorder (λ x y → (x ≤ⁿ y) ϵ))
  × ((ϵ : ℕ) (x y : ⟨ X ⟩) → is-decidable ((x ≤ⁿ y) ϵ))
  × ((ϵ : ℕ) (x y : ⟨ X ⟩) →   C X ϵ x y → (x ≤ⁿ y) ϵ)
- 
+
 ≤-refl⟨_⟩
  : {X : 𝓤 ̇ } {_≤_ : X → X → 𝓦 ̇ }
  → is-preorder _≤_
@@ -312,4 +312,4 @@ approx-order-f-uc-predicate-r X Y f ϕ _≤ⁿ_ a ϵ y
      (approx-order-ucontinuous-r Y a ϵ y)
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 ```agda
 {-# OPTIONS --without-K --exact-split --safe #-}
@@ -171,20 +171,20 @@ module Regression-Example
  (X : ClosenessSpace 𝓤) (Y : ClosenessSpace 𝓥)
  (g : ⟨ Y ⟩ → ⟨ X ⟩)
  (ϕᵍ : f-ucontinuous Y X g)
- (tb : totally-bounded Y 𝓥') 
+ (tb : totally-bounded Y 𝓥')
  (S : csearchable 𝓤₀ Y)
  (M : ⟨ X ⟩ → (𝟛ᴺ → 𝟛ᴺ))
  (𝓞 : 𝟛ᴺ → 𝟛ᴺ)
  {n : ℕ} (observations : Vec 𝟛ᴺ n)
  (ϕᴹ : (y : 𝟛ᴺ) → f-ucontinuous X 𝟛ᴺ-ClosenessSpace λ x → M x y)
  where
-          
+
  𝟛ᴺ→𝟛ᴺ-PseudoClosenessSpace : (𝟛ᴺ → 𝟛ᴺ) → PseudoClosenessSpace 𝓤₀
  𝟛ᴺ→𝟛ᴺ-PseudoClosenessSpace f
   = Least-PseudoClosenessSpace 𝟛ᴺ 𝟛ᴺ-ClosenessSpace f observations
 
  y₀ : ⟨ Y ⟩
- y₀ = csearchable-pointed 𝓤₀ Y S 
+ y₀ = csearchable-pointed 𝓤₀ Y S
 
  ϕᴸ : (f : 𝟛ᴺ → 𝟛ᴺ)
     → f-ucontinuous' (ι Y)
@@ -194,7 +194,7 @@ module Regression-Example
         (M ∘ g) observations
         (λ y → f-ucontinuous-comp Y X 𝟛ᴺ-ClosenessSpace
                g (λ x → M x y) ϕᵍ (ϕᴹ y))
-               
+
  opt reg : (𝟛ᴺ → 𝟛ᴺ) → ℕ → ⟨ Y ⟩
  opt f ϵ = (pr₁ (optimisation-convergence Y
                     (𝟛ᴺ→𝟛ᴺ-PseudoClosenessSpace 𝓞) y₀ tb (M ∘ g) f
@@ -206,10 +206,10 @@ module Regression-Example
  reg𝓞 opt𝓞 : ℕ → ⟨ Y ⟩
  reg𝓞  = reg 𝓞
  opt𝓞  = opt 𝓞
- 
+
 module Regression-ExampleDistortionProne
  (X : ClosenessSpace 𝓤)
- (tb : totally-bounded X 𝓥') 
+ (tb : totally-bounded X 𝓥')
  (S : csearchable 𝓤₀ X)
  (M : ⟨ X ⟩ → (𝟛ᴺ → 𝟛ᴺ))
  (𝓞 : 𝟛ᴺ → 𝟛ᴺ)
@@ -220,7 +220,7 @@ module Regression-ExampleDistortionProne
 
  open Regression-Example X X id (id-ucontinuous X) tb S M (Ψ 𝓞)
         observations ϕᴹ
-          
+
  regΨ𝓞 optΨ𝓞 : ℕ → ⟨ X ⟩
  regΨ𝓞 = reg𝓞
  optΨ𝓞 = opt𝓞
@@ -245,7 +245,7 @@ module Regression-Example1a where
                 𝟛-is-discrete 𝟛-is-discrete
                 (λ x → mid x y)
                 (seq-f-ucontinuous²-left mid mid-ucontinuous' y))
- 
+
  open Regression-Example
    𝟛ᴺ-ClosenessSpace 𝟚ᴺ-ClosenessSpace
    _↑ ↑-ucontinuous
@@ -262,7 +262,7 @@ module Regression-Example1a where
    𝟛ᴺ-totally-bounded 𝟛ᴺ-csearchable-tb
    M 𝓞 Ψ
    observations ϕᴹ
-   public 
+   public
 
 module Regression-Example1b where
 
@@ -278,7 +278,7 @@ module Regression-Example1b where
             mid-ucontinuous' mid-ucontinuous' x)
 
  open Regression-Example1a using (𝓞;observations;Ψ)
- 
+
  open Regression-Example
    𝟛ᴺ×𝟛ᴺ-ClosenessSpace 𝟚ᴺ×𝟚ᴺ-ClosenessSpace
    _⤊ ⤊-ucontinuous
@@ -291,7 +291,7 @@ module Regression-Example1b where
    𝟛ᴺ×𝟛ᴺ-totally-bounded 𝟛ᴺ×𝟛ᴺ-csearchable-tb
    M 𝓞 Ψ
    observations ϕᴹ
-   public 
+   public
 
 module Regression-Example2 where
 
@@ -386,4 +386,4 @@ module Regression-Example2-SearchDistortionFree where
  regressed-function = M ∘ regressed-parameter
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

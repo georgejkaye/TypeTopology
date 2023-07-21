@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Sequences
 
@@ -78,4 +78,4 @@ bounded-decidable-Σ {𝓤} {X} d (succ n)
 ∼ⁿ-decidable ds α β = bounded-decidable-Π (λ n → ds n (α n) (β n))
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

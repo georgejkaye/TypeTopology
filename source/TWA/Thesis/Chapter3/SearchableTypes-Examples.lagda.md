@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Examples of uniformly continuous searchable closeness spaces
 
@@ -191,7 +191,7 @@ tail-predicate {𝓤} {𝓦} {X} f ds δ x ((p' , d') , ϕ') = (p , d) , ϕ
   d xs = d' (x ∷ xs)
   ϕ : p-ucontinuous-with-mod (ΠD-ClosenessSpace (ds ∘ succ)) p δ
   ϕ x₁ x₂ Cδx₁x₂
-   = ϕ' (x ∷ x₁) (x ∷ x₂) (∼ⁿ-to-C' ds (x ∷ x₁) (x ∷ x₂) (succ δ) γ) 
+   = ϕ' (x ∷ x₁) (x ∷ x₂) (∼ⁿ-to-C' ds (x ∷ x₁) (x ∷ x₂) (succ δ) γ)
    where
     γ : ((x ∷ x₁) ∼ⁿ (x ∷ x₂)) (succ δ)
     γ zero i<sδ = refl
@@ -225,7 +225,7 @@ head-predicate {𝓤} {𝓦} {X} α f ds δ ((p , d) , ϕ)
    ∷ pr₁ (dep-discrete-finite-seq-csearchable' (α ∘ succ)
            (f ∘ succ) (ds ∘ succ) δ
            (tail-predicate f ds δ x ((p , d) , ϕ)))
-     
+
 dep-discrete-finite-seq-csearchable' α f ds 0 ((p , d) , ϕ)
  = α , λ (y , py) → ϕ y α (λ _ ()) py
 dep-discrete-finite-seq-csearchable'
@@ -234,13 +234,13 @@ dep-discrete-finite-seq-csearchable'
  where
    pₕ  = head-predicate α f ds δ ((p , d) , ϕ)
    x₀ : X 0
-   x₀ = pr₁ (finite-searchable (f 0) (α 0) pₕ) 
+   x₀ = pr₁ (finite-searchable (f 0) (α 0) pₕ)
    γₕ : Σ x ꞉ X 0 , pr₁ pₕ x holds → pr₁ pₕ x₀ holds
-   γₕ = pr₂ (finite-searchable (f 0) (α 0) pₕ) 
+   γₕ = pr₂ (finite-searchable (f 0) (α 0) pₕ)
    pₜ→ = λ x → tail-predicate f ds δ x ((p , d) , ϕ)
    xs→ : (x : X 0) → Σ xs₀ ꞉ Π (X ∘ succ)
        , ((Σ xs ꞉ Π (X ∘ succ) , (pr₁ ∘ pr₁) (pₜ→ x) xs holds)
-       → (pr₁ ∘ pr₁) (pₜ→ x) xs₀ holds) 
+       → (pr₁ ∘ pr₁) (pₜ→ x) xs₀ holds)
    xs→ x = dep-discrete-finite-seq-csearchable'
              (α ∘ succ) (f ∘ succ) (ds ∘ succ) δ (pₜ→ x)
    xs₀ : Π X
@@ -267,12 +267,12 @@ dep-discrete-finite-seq-csearchable α f ds ((p , d) , (δ , ϕ))
 
 discrete-finite-seq-csearchable
  : {X : 𝓤 ̇ }
- → X 
+ → X
  → (f : finite-linear-order X)
  → (ds : is-discrete X)
  → csearchable 𝓦 (ℕ→D-ClosenessSpace ds)
 discrete-finite-seq-csearchable x₀ f ds
- = dep-discrete-finite-seq-csearchable (λ _ → x₀) (λ _ → f) (λ _ → ds) 
+ = dep-discrete-finite-seq-csearchable (λ _ → x₀) (λ _ → f) (λ _ → ds)
 ```
 
 ## Tychonoff theorem
@@ -358,7 +358,7 @@ tychonoff' T S 0 ((p , d) , ϕ)
  = (λ n → pr₁ (S n (((λ _ → ⊤Ω) , (λ _ → inl ⋆))
  , (0 , (λ x₁ x₂ _ _ → ⋆)))) )
  , (λ (α , pα) → ϕ α _ (λ _ ()) pα)
-tychonoff' T S (succ δ) ((p , d) , ϕ) 
+tychonoff' T S (succ δ) ((p , d) , ϕ)
  = (x ∷ pr₁ (xs→ x)) , γ
  where
    pₜ→ = λ x → tail-predicate-tych T δ x ((p , d) , ϕ)
@@ -366,7 +366,7 @@ tychonoff' T S (succ δ) ((p , d) , ϕ)
    xs→ : (x : ⟨ T 0 ⟩) →  Σ xs₀ ꞉ Π (⟨_⟩ ∘ T ∘ succ)
        , ((Σ xs ꞉ Π (⟨_⟩ ∘ T ∘ succ)
                 , (pr₁ ∘ pr₁) (pₜ→ x) xs holds)
-       → (pr₁ ∘ pr₁) (pₜ→ x) xs₀ holds) 
+       → (pr₁ ∘ pr₁) (pₜ→ x) xs₀ holds)
    xs→ x = tychonoff' (T ∘ succ) (S ∘ succ) δ (pₜ→ x)
    x : ⟨ T 0 ⟩
    x = pr₁ (S 0 pₕ)
@@ -384,4 +384,4 @@ tychonoff : (T : ℕ → ClosenessSpace 𝓤)
 tychonoff T S ((p , d) , δ , ϕ) = tychonoff' T S δ ((p , d) , ϕ)
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

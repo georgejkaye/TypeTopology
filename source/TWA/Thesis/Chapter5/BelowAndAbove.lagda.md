@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Structural properties of ternary Boehm encodings
 
@@ -55,7 +55,7 @@ downLeft-monotone' a b (n , refl)
 ℤ≤<-trans a b c (m , refl) (n , refl)
  = m ℕ+ n
  , (ap (succℤ a ℤ+_) (distributivity-pos-addition m n ⁻¹)
- ∙ ℤ+-assoc (succℤ a) (pos m) (pos n) ⁻¹ 
+ ∙ ℤ+-assoc (succℤ a) (pos m) (pos n) ⁻¹
  ∙ ap (_+pos n) (ℤ-left-succ-pos a m))
 
 downLeft<<downRight : (a b : ℤ) → a <ℤ b → downLeft a <ℤ downRight b
@@ -144,7 +144,7 @@ downRight＝downLeft a
 ## below and below'
 
 ```agda
-_below_ : ℤ → ℤ → 𝓤₀ ̇ 
+_below_ : ℤ → ℤ → 𝓤₀ ̇
 a below b = downLeft b ≤ a ≤ downRight b
 
 downLeft-below  : (a : ℤ) → downLeft a below a
@@ -305,7 +305,7 @@ upRight-<<' a b (succ n) e
        (upRight-monotone _ _
        (succ n , ap succℤ (ℤ-left-succ-pos (succℤ a) n
                ∙ ap succℤ (ℤ-left-succ-pos a n)))))
- 
+
 upRight-<< : (a b : ℤ) → a <ℤ predℤ b → upRight a <ℤ upRight b
 upRight-<< a b (n , e)
  = upRight-<<' a b n (ℤ-left-succ-pos a n ⁻¹ ∙ e)
@@ -320,7 +320,7 @@ upLeft-<< a b (n , refl)
 ## above and above'
 
 ```agda
-_above_ : ℤ → ℤ → 𝓤₀ ̇ 
+_above_ : ℤ → ℤ → 𝓤₀ ̇
 b above a = upLeft a ≤ℤ b ≤ℤ upRight a
 
 _above'_ : ℤ → ℤ → 𝓤₀ ̇
@@ -535,8 +535,8 @@ downRight-upLeft-negsucc (succ (succ b))
  = transport ((predℤ ^ 2) (negsucc b) ≤ℤ_)
      ((ap downRight (upLeft-pred (negsucc b))
       ∙ dR-transform-pred (upLeft (negsucc b)) (pos b)) ⁻¹)
-     (ℤ≤-predⁿ-inj _ _ 2 (downRight-upLeft-negsucc b)) 
- 
+     (ℤ≤-predⁿ-inj _ _ 2 (downRight-upLeft-negsucc b))
+
 downRight-upLeft : (b : ℤ) → b ≤ℤ downRight (upLeft b)
 downRight-upLeft
  = ℤ-elim _ downRight-upLeft-pos downRight-upLeft-negsucc
@@ -546,7 +546,7 @@ downRight-upRight b
  = ℤ≤-trans _ _ _
      (downRight-upLeft b)
      (downRight-monotone _ _ (upLeft≤upRight b))
-     
+
 above-upRight : (b : ℤ) → b below (upRight b)
 above-upRight b = downLeft-upRight b , downRight-upRight b
 
@@ -578,4 +578,4 @@ above-downRight a
  = below-implies-above (downRight a) a (downRight-below a)
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)

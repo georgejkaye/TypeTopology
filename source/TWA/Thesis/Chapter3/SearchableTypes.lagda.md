@@ -1,4 +1,4 @@
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
 
 # Uniformly continuously searchable closeness spaces
 
@@ -118,14 +118,14 @@ equivs-preserve-searchability {𝓤} {𝓥} {𝓦} {X} {Y}
 ≃-searchable
  : {X : 𝓤  ̇ } {Y : 𝓥 ̇ } → X ≃ Y → searchable 𝓦 X → searchable 𝓦 Y
 ≃-searchable (f , e) = equivs-preserve-searchability f e
-             
+
 finite-searchable : {X : 𝓤 ̇ }
                   → finite-linear-order X
                   → X
                   → searchable 𝓦 X
 finite-searchable (0 , (g , _)) x = 𝟘-elim (g x)
 finite-searchable (succ n , e) x
- = ≃-searchable (≃-sym e) (Fin-searchable (succ n) 𝟎) 
+ = ≃-searchable (≃-sym e) (Fin-searchable (succ n) 𝟎)
 
 ×-searchable : {X : 𝓤 ̇ } {Y : 𝓥 ̇ }
              → searchable 𝓦 X
@@ -188,7 +188,7 @@ decidable-to-𝟚 (inl  x)
 decidable-to-𝟚 (inr ¬x)
  = ₀ , ((𝟘-elim ∘ zero-is-not-one) , (λ x → 𝟘-elim (¬x x)))
      , (λ _ → ¬x) , (λ _ → refl)
-     
+
 LPO-implies-ℕ-searchability : LPO → searchable 𝓦 ℕ
 LPO-implies-ℕ-searchability {𝓦} f (p , d) = n , γ
  where
@@ -259,7 +259,7 @@ csearchable-pointed
  : (𝓦 : Universe)
  → (X : ClosenessSpace 𝓤)
  → csearchable 𝓦 X
- → ⟨ X ⟩ 
+ → ⟨ X ⟩
 csearchable-pointed 𝓦 X Sx
  = pr₁ (Sx (((λ _ → ⊤Ω) , (λ _ → inl ⋆)) , 0 , λ _ _ _ → id))
 
@@ -294,4 +294,4 @@ totally-bounded-csearchable {𝓤} {𝓤'} {𝓦} X x t ((p , d) , δ , ϕ)
   γ (x , px) = γ' (h x , (ϕ x (g (h x)) (η x) px))
 ```
 
-[⇐ Index](../html/TWA.Thesis.index.html)
+[⇐ Index](TWA.Thesis.index.html)
